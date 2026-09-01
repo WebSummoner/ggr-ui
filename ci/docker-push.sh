@@ -2,8 +2,12 @@
 
 set -e
 
-docker build -t $GITHUB_REPOSITORY .
-docker tag $GITHUB_REPOSITORY $GITHUB_REPOSITORY:$1
-docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-docker push $GITHUB_REPOSITORY
-docker push $GITHUB_REPOSITORY:$1
+# Docker rejects upper-case repository names; the org has capitals.
+IMAGE=$(echo "$GITHUB_REPOSITORY" | tr '[:upper:]' '[:lower:]')
+
+docker build -t "$IMAGE" .
+docker tag "$IMAGE" "$IMAGE:$1"
+[ -n "${DOCKER_USERNAME:-}" ] && [ -n "${DOCKER_PASSWORD:-}" ] || { echo "DOCKER_USERNAME and DOCKER_PASSWORD must be set" >&2; exit 1; }
+printf '%s' "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker push "$IMAGE"
+docker push "$IMAGE:$1"

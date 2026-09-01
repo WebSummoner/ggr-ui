@@ -15,7 +15,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/aerokube/ggr/config"
+	"github.com/websummoner/ggr/config"
 )
 
 var (
@@ -104,7 +104,7 @@ func init() {
 		log.Fatalf("[INIT] [Failed to load quota files: %v]", err)
 	}
 
-	sig := make(chan os.Signal)
+	sig := make(chan os.Signal, 1)
 	signal.Notify(sig, syscall.SIGHUP)
 	go func() {
 		for {
@@ -118,7 +118,7 @@ func init() {
 }
 
 func main() {
-	stop := make(chan os.Signal)
+	stop := make(chan os.Signal, 1)
 	signal.Notify(stop, syscall.SIGINT, syscall.SIGTERM)
 
 	log.Printf("[INIT] [Listen on %s]", listen)

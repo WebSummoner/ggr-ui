@@ -1,7 +1,11 @@
-== CLI Flags
+---
+title: CLI flags
+description: Every command-line flag supported by the ggr-ui binary.
+---
 
-The following flags are supported by ```ggr-ui``` command:
-----
+The following flags are supported by the `ggr-ui` command:
+
+```
   -authenticated-access-only
     	Show statistics about all hosts only when credentials are provided
   -grace-period duration
@@ -22,4 +26,4 @@ The following flags are supported by ```ggr-ui``` command:
     	request timeout (default 30s)
   -version
     	Show version and exit
-----
+```

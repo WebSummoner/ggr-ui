@@ -14,7 +14,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/aerokube/ggr/config"
+	"github.com/websummoner/ggr/config"
 )
 
 var _ = func() bool {
@@ -26,18 +26,18 @@ func init() {
 	gitRevision = "test-revision"
 }
 
-type Selenoid struct {
+type WebSummoner struct {
 	*httptest.Server
 	Host *config.Host
 	Sum  string
 }
 
-func NewSelenoid(mux http.Handler) *Selenoid {
+func NewWebSummoner(mux http.Handler) *WebSummoner {
 	s := httptest.NewServer(mux)
 	u, _ := url.Parse(s.URL)
 	host, p, _ := net.SplitHostPort(u.Host)
 	port, _ := strconv.ParseInt(p, 10, 32)
-	return &Selenoid{
+	return &WebSummoner{
 		Server: s,
 		Host: &config.Host{
 			Name: host,
@@ -161,8 +161,8 @@ func TestPing(t *testing.T) {
 
 func TestBrokenConfig(t *testing.T) {
 	m := map[string]map[string]*config.Host{
-		"unknown": map[string]*config.Host{
-			"md5sum": &config.Host{Name: "://localhost"},
+		"unknown": {
+			"md5sum": {Name: "://localhost"},
 		}}
 	lock.Lock()
 	hosts = m
@@ -206,10 +206,10 @@ func TestResponseTime(t *testing.T) {
 	defer func(tmp time.Duration) {
 		responseTime = tmp
 	}(temp)
-	selenoid := NewSelenoid(silent)
+	websummoner := NewWebSummoner(silent)
 	m := map[string]map[string]*config.Host{
-		"unknown": map[string]*config.Host{
-			selenoid.Sum: &config.Host{Name: selenoid.URL},
+		"unknown": {
+			websummoner.Sum: {Name: websummoner.URL},
 		}}
 	lock.Lock()
 	hosts = m
@@ -292,13 +292,13 @@ func TestStatus(t *testing.T) {
 		m := map[string]map[string]*config.Host{
 			"unknown": {}}
 		for _, handler := range c.Handlers {
-			selenoid := NewSelenoid(handler)
+			websummoner := NewWebSummoner(handler)
 			if handler != nil {
-				defer selenoid.Close()
+				defer websummoner.Close()
 			} else {
-				selenoid.Close()
+				websummoner.Close()
 			}
-			m["unknown"][selenoid.Sum] = selenoid.Host
+			m["unknown"][websummoner.Sum] = websummoner.Host
 		}
 		lock.Lock()
 		hosts = m

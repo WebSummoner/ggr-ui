@@ -1,12 +1,12 @@
 # Ggr UI
-[![Build Status](https://github.com/aerokube/ggr-ui/workflows/build/badge.svg)](https://github.com/aerokube/ggr-ui/actions?query=workflow%3Abuild)
-[![Release](https://img.shields.io/github/release/aerokube/ggr-ui.svg)](https://github.com/aerokube/ggr-ui/releases/latest)
-[![Docker Pulls](https://img.shields.io/docker/pulls/aerokube/ggr-ui.svg)](https://hub.docker.com/r/aerokube/ggr)
+[![Build](https://github.com/WebSummoner/ggr-ui/actions/workflows/build.yml/badge.svg)](https://github.com/WebSummoner/ggr-ui/actions/workflows/build.yml)
+[![Lint](https://github.com/WebSummoner/ggr-ui/actions/workflows/lint.yml/badge.svg)](https://github.com/WebSummoner/ggr-ui/actions/workflows/lint.yml)
+[![codecov](https://codecov.io/gh/websummoner/ggr-ui/graph/badge.svg)](https://codecov.io/gh/websummoner/ggr-ui)
+[![Release](https://img.shields.io/github/v/release/WebSummoner/ggr-ui)](https://github.com/WebSummoner/ggr-ui/releases/latest)
+[![Docker Pulls](https://img.shields.io/docker/pulls/websummoner/ggr-ui)](https://hub.docker.com/r/websummoner/ggr-ui)
 
-**UNMAINTAINED**. Consider https://aerokube.com/moon/latest as alternative.
-
-Ggr UI is a standalone daemon that automatically collects `/status` information from multiple [Selenoid](https://github.com/aerokube/selenoid) instances and returns it as a single `/status` API. When this daemon is running you can use [Selenoid UI](https://github.com/aerokube/selenoid-ui) to see the state of the entire cluster.
+Ggr UI is a standalone daemon that automatically collects `/status` information from multiple [WebSummoner](https://github.com/WebSummoner/websummoner) instances and returns it as a single `/status` API. When this daemon is running you can use [WebSummoner UI](https://github.com/WebSummoner/websummoner-ui) to see the state of the entire cluster.
 
 ## Complete Guide & Build Instructions
 
-Complete reference guide (including building instructions) can be found at: http://aerokube.com/ggr-ui/latest/
+Complete reference guide (including building instructions) can be found at: https://websummoner.github.io/ggr-ui/

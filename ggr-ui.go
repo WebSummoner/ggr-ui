@@ -11,8 +11,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/aerokube/ggr/config"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/websummoner/ggr/config"
 	"golang.org/x/net/websocket"
 )
 
@@ -241,7 +241,7 @@ func info(r *http.Request) (string, string) {
 
 func ping(w http.ResponseWriter, _ *http.Request) {
 	w.Header().Add("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(struct {
+	_ = json.NewEncoder(w).Encode(struct {
 		Uptime  string `json:"uptime"`
 		Version string `json:"version"`
 	}{time.Since(startTime).String(), gitRevision})
