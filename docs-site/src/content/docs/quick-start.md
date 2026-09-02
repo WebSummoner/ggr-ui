@@ -5,7 +5,7 @@ description: Start Ggr UI against a quota directory and point WebSummoner UI at 
 
 1. Prerequisites:
    - One or more [WebSummoner](https://github.com/WebSummoner/websummoner) hosts
-   - A directory with [XML quota files](https://websummoner.github.io/ggr/guides/quota-files/) for Ggr
+   - A directory with [XML quota files](https://websummoner.riadvice.com/ggr/guides/quota-files/) for Ggr
 
 2. Start Ggr UI binary or container:
 
@@ -28,7 +28,7 @@ description: Start Ggr UI against a quota directory and point WebSummoner UI at 
    :::
 
 4. You can also use `/status` API similarly to WebSummoner
-   [/status](https://websummoner.github.io/websummoner/) API:
+   [/status](https://websummoner.riadvice.com/websummoner/) API:
 
    ```bash
    curl -s http://localhost:8888/status

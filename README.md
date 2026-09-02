@@ -9,4 +9,4 @@ Ggr UI is a standalone daemon that automatically collects `/status` information 
 
 ## Complete Guide & Build Instructions
 
-Complete reference guide (including building instructions) can be found at: https://websummoner.github.io/ggr-ui/
+Complete reference guide (including building instructions) can be found at: https://websummoner.riadvice.com/ggr-ui/
