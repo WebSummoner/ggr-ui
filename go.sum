@@ -24,8 +24,8 @@ github.com/prometheus/procfs v0.22.0 h1:6q9+/JL9IKAPbCmBrv9n5O5Ty3NKnciV5X7YGw0o
 github.com/prometheus/procfs v0.22.0/go.mod h1:CvmFr/GVhIjIvWJZW3tgkODBQMRIf0EyWMQLHCHab58=
 github.com/stretchr/testify v1.12.1 h1:EuwCh5fleGS7H32xRwO3wRGT7DxrDhLAT6FF8MpWDWE=
 github.com/stretchr/testify v1.12.1/go.mod h1:MDEgiDPPsNp5cuIrHPPCyornHKgEVbtFUmoNlxoYthg=
-github.com/websummoner/ggr v0.0.0-20260903081702-6c9c1f33564d h1:Dg4/Vbryf0LwO5ICBwmKiqwmGUL1QeV/IR2XHAUIjQw=
-github.com/websummoner/ggr v0.0.0-20260903081702-6c9c1f33564d/go.mod h1:bldp9RxAb6LvI+IEG23iE2fYTa9uURoi+7vWxFlYTWs=
+github.com/websummoner/ggr v0.0.0-20260919141609-877ec084d69e h1:wriO6rB6pvTtdYheBs0uhfP5vy/cREnZKfEnWKV5P9A=
+github.com/websummoner/ggr v0.0.0-20260919141609-877ec084d69e/go.mod h1:izOmPNsy2VEhWgAP0wZprJNFU4QrUXebQeS1vNnLJjU=
 go.uber.org/goleak v1.3.0 h1:2K3zAYmnTNqV73imy9J1T3WC+gmCePx2hEGkimedGto=
 go.uber.org/goleak v1.3.0/go.mod h1:CoHD4mav9JJNrW/WLlf7HGZPjdw8EucARQHekz1X6bE=
 go.yaml.in/yaml/v2 v2.4.4 h1:tuyd0P+2Ont/d6e2rl3be67goVK4R6deVxCUX5vyPaQ=

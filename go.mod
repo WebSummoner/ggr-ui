@@ -5,7 +5,7 @@ go 1.27
 require (
 	github.com/aandryashin/reloader v0.0.0-20161127125235-da4f1b43ce40
 	github.com/prometheus/client_golang v1.24.1
-	github.com/websummoner/ggr v0.0.0-20260903081702-6c9c1f33564d
+	github.com/websummoner/ggr v0.0.0-20260919141609-877ec084d69e
 	golang.org/x/net v0.59.0
 )
 
